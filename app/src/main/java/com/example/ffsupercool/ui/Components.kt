@@ -23,8 +23,8 @@ import com.example.ffsupercool.data.*
 @Composable
 fun BottomNav(selectedItem: String) {
     NavigationBar(
-        containerColor = PurpleGrey40,
-        contentColor = Pink80,
+        containerColor = DarkBg,
+        contentColor = TextGray,
         tonalElevation = 8.dp
     ) {
         NavigationBarItem(
@@ -33,10 +33,10 @@ fun BottomNav(selectedItem: String) {
             selected = selectedItem == "home",
             onClick = { },//non implémenté car il faut aller sur une autre page pour y accéder
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Purple80,
-                selectedTextColor = Purple80,
-                unselectedIconColor = Pink80,
-                unselectedTextColor = Pink80,
+                selectedIconColor = AccentBlue,
+                selectedTextColor = AccentBlue,
+                unselectedIconColor = TextGray,
+                unselectedTextColor = TextGray,
                 indicatorColor = Color.Transparent
             )
         )
@@ -46,10 +46,10 @@ fun BottomNav(selectedItem: String) {
             selected = selectedItem == "search",
             onClick = { },//non implémenté
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Purple80,
-                selectedTextColor = Purple80,
-                unselectedIconColor = Pink80,
-                unselectedTextColor = Pink80,
+                selectedIconColor = AccentBlue,
+                selectedTextColor = AccentBlue,
+                unselectedIconColor = TextGray,
+                unselectedTextColor = TextGray,
                 indicatorColor = Color.Transparent
             )
         )
@@ -59,10 +59,10 @@ fun BottomNav(selectedItem: String) {
             selected = selectedItem == "standings",
             onClick = { }, //non implémenté
             colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = Purple80,
-                selectedTextColor = Purple80,
-                unselectedIconColor = Pink80,
-                unselectedTextColor = Pink80,
+                selectedIconColor = AccentBlue,
+                selectedTextColor = AccentBlue,
+                unselectedIconColor = TextGray,
+                unselectedTextColor = TextGray,
                 indicatorColor = Color.Transparent
             )
         )
@@ -105,7 +105,7 @@ fun MatchCard(match: Match) {
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
                             text = "${match.sport} · ${match.category}",
-                            color = PurpleGrey80,
+                            color = TextGray,
                             fontSize = 12.sp
                         )
                     }
@@ -120,12 +120,12 @@ fun MatchCard(match: Match) {
                         )
                     } else {
                         Surface(
-                            color = Pink80.copy(alpha = 0.2f),
+                            color = AccentBlue.copy(alpha = 0.2f),
                             shape = RoundedCornerShape(16.dp)
                         ) {
                             Text(
                                 text = "À venir",
-                                color = Pink80,
+                                color = AccentBlue,
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Medium
@@ -153,7 +153,7 @@ fun MatchCard(match: Match) {
                     Text(
                         text = " VS ",
                         modifier = Modifier.padding(horizontal = 12.dp),
-                        color = PurpleGrey80,
+                        color = TextGray,
                         fontSize = 14.sp
                     )
                     Text(
@@ -176,20 +176,20 @@ fun MatchCard(match: Match) {
                 ) {
                     Text(
                         text = "${match.date} · ${match.time}",
-                        color = PurpleGrey80,
+                        color = TextGray,
                         fontSize = 12.sp
                     )
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
                             imageVector = Icons.Default.LocationOn,
                             contentDescription = null,
-                            tint = PurpleGrey80,
+                            tint = TextGray,
                             modifier = Modifier.size(14.dp)
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
                             text = match.venue,
-                            color = PurpleGrey80,
+                            color = TextGray,
                             fontSize = 12.sp
                         )
                     }
