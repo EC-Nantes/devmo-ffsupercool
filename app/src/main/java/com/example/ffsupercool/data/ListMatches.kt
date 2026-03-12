@@ -32,8 +32,8 @@ val listMatches = listOf(
         venue = "Salle Omnisports",
         status = MatchStatus.UPCOMING,
         sportColor = SportVolley,
-        championship = "Écoles",
-        poule = "Poule 1"
+        championship = "District",
+        poule = "Poule 2"
     ),
     Match(
         id = "3",
@@ -48,7 +48,7 @@ val listMatches = listOf(
         time = "14h00",
         venue = "Stade Municipal",
         status = MatchStatus.FINISHED,
-        sportColor = SportFootball,
+        sportColor = SportVolley,
         championship = "District",
         poule = "Poule 2"
     ),
