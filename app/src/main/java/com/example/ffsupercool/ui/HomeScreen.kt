@@ -145,7 +145,8 @@ fun MatchCardSimple(match: Match) {
                 text = "${match.teamA} vs ${match.teamB}",
                 style = MaterialTheme.typography.titleMedium
             )
-            Text(text = match.venue, style = MaterialTheme.typography.bodySmall, color = Color.Gray)
+            val venueText = "${match.venue} · ${match.date} · ${match.time}"
+            Text(text = venueText, style = MaterialTheme.typography.bodySmall, color = Color.Gray)
         }
     }
 }
