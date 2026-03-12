@@ -1,19 +1,23 @@
 package com.example.ffsupercool.ui
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.NavigationBarItemDefaults
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.ffsupercool.ui.theme.*
+import com.example.ffsupercool.data.*
 
 
 @Composable
@@ -101,7 +105,7 @@ fun MatchCard(match: Match) {
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
                             text = "${match.sport} · ${match.category}",
-                            color = TextGray,
+                            color = PurpleGrey80,
                             fontSize = 12.sp
                         )
                     }
@@ -116,12 +120,12 @@ fun MatchCard(match: Match) {
                         )
                     } else {
                         Surface(
-                            color = AccentBlue.copy(alpha = 0.2f),
+                            color = Pink80.copy(alpha = 0.2f),
                             shape = RoundedCornerShape(16.dp)
                         ) {
                             Text(
                                 text = "À venir",
-                                color = AccentBlue,
+                                color = Pink80,
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Medium
@@ -149,7 +153,7 @@ fun MatchCard(match: Match) {
                     Text(
                         text = " VS ",
                         modifier = Modifier.padding(horizontal = 12.dp),
-                        color = TextGray,
+                        color = PurpleGrey80,
                         fontSize = 14.sp
                     )
                     Text(
@@ -172,20 +176,20 @@ fun MatchCard(match: Match) {
                 ) {
                     Text(
                         text = "${match.date} · ${match.time}",
-                        color = TextGray,
+                        color = PurpleGrey80,
                         fontSize = 12.sp
                     )
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
                             imageVector = Icons.Default.LocationOn,
                             contentDescription = null,
-                            tint = TextGray,
+                            tint = PurpleGrey80,
                             modifier = Modifier.size(14.dp)
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
                             text = match.venue,
-                            color = TextGray,
+                            color = PurpleGrey80,
                             fontSize = 12.sp
                         )
                     }

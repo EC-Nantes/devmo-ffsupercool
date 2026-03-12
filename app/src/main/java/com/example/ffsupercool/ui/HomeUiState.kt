@@ -1,8 +1,7 @@
 package com.example.ffsupercool
 
-import com.example.ffsupercool.data.FollowedTeam
-import com.example.ffsupercool.data.Match
-import com.example.ffsupercool.data.listMatches
+import com.example.ffsupercool.data.*
+
 
 data class HomeUiState(
     val leagueName: String = "Pays de la Loire",
