@@ -24,9 +24,3 @@ enum class MatchStatus {
     UPCOMING, FINISHED
 }
 
-data class FollowedTeam(
-    val sport: String,
-    val category: String,
-    val team: String
-)
-
