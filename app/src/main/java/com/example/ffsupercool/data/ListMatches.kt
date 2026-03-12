@@ -66,5 +66,35 @@ val listMatches = listOf(
         sportColor = SportBasket,
         championship = "Écoles",
         poule = "Poule 2"
+    ),
+    Match(
+        id = "5",
+        sport = "Basket",
+        sportIcon = "🏀",
+        category = "Masculin",
+        teamA = "Centrale 1",
+        teamB = "Nantes Univ",
+        date = "Mar. 17 mar",
+        time = "20h00",
+        venue = "Gymnase Centrale",
+        status = MatchStatus.UPCOMING,
+        sportColor = SportBasket,
+        championship = "Écoles",
+        poule = "Poule 2"
+    ),
+    Match(
+        id = "6",
+        sport = "Volley",
+        sportIcon = "🏐",
+        category = "Féminin",
+        teamA = "IMT Atlantique",
+        teamB = "Audencia 1",
+        date = "Mer. 18 mar",
+        time = "18h30",
+        venue = "Gymnase IMT",
+        status = MatchStatus.UPCOMING,
+        sportColor = SportVolley,
+        championship = "District",
+        poule = "Poule 2"
     )
 )

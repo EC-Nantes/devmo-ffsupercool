@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
@@ -41,7 +42,7 @@ fun HomeScreen(
 ) {
     val uiState by homeViewModel.uiState.collectAsState()
 
-    com.example.ffsupercool.ui.HomeScreenContent(
+    HomeScreenContent(
         uiState = uiState,
         onRemoveTeam = { team -> homeViewModel.removeTeam(team) }
     )
@@ -54,9 +55,6 @@ fun HomeScreenContent(
     modifier: Modifier = Modifier
 ) {
     Scaffold(
-        topBar = {
-            com.example.ffsupercool.ui.Header(leagueName = uiState.leagueName)
-        },
         bottomBar = { BottomNav("home") }
     ) { innerPadding ->
         LazyColumn(
@@ -66,6 +64,10 @@ fun HomeScreenContent(
                 .padding(horizontal = 16.dp)
         ) {
             item {
+                Header(leagueName = uiState.leagueName)
+            }
+
+            item {
                 Text(
                     text = "ÉQUIPES SUIVIES",
                     style = MaterialTheme.typography.labelLarge,
@@ -74,7 +76,7 @@ fun HomeScreenContent(
             }
 
             items(uiState.followedTeams) { team ->
-                com.example.ffsupercool.ui.FollowedTeamItem(
+                FollowedTeamItem(
                     team = team,
                     onRemoveClick = { onRemoveTeam(team) }
                 )
@@ -91,7 +93,7 @@ fun HomeScreenContent(
             }
 
             items(uiState.allMatches) { match ->
-                com.example.ffsupercool.ui.MatchCardSimple(match)
+                MatchCardSimple(match)
             }
         }
     }
@@ -99,9 +101,23 @@ fun HomeScreenContent(
 
 @Composable
 fun Header(leagueName: String) {
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(text = "Accueil", style = MaterialTheme.typography.headlineMedium)
-        Text(text = leagueName, color = Color.Gray)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Column {
+            Text(text = "Accueil", style = MaterialTheme.typography.headlineMedium)
+            Text(text = leagueName, color = Color.Gray)
+        }
+        IconButton(onClick = { /* Non cliquable pour l'instant */ }) {
+            Icon(
+                imageVector = Icons.Default.Settings,
+                contentDescription = "Paramètres"
+            )
+        }
     }
 }
 
