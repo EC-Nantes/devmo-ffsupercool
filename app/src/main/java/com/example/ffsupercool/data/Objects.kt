@@ -1,4 +1,4 @@
-package com.example.ffsupercool
+package com.example.ffsupercool.data
 
 import androidx.compose.ui.graphics.Color
 

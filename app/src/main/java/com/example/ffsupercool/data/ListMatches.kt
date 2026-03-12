@@ -1,4 +1,4 @@
-package com.example.ffsupercool
+package com.example.ffsupercool.data
 
 import com.example.ffsupercool.ui.theme.*
 
